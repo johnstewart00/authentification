@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './Signup.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,14 +28,7 @@ const Signup = () => {
           })
           console.log(response);
           localStorage.setItem("authenticated", true);
-          localStorage.setItem("userInfo", {
-            username, 
-            password,
-            firstName,
-            lastName,
-            address,
-            gender
-          })
+          localStorage.setItem("firstName", firstName)
           navigate("/home");
         } catch (error) {
           console.log(error);
@@ -47,37 +41,43 @@ const Signup = () => {
       };
 
     return (
-        <div>
-            <p>Enter Your Information Below</p>
-            <form className="signupForm" >
-                <label className="usernameLabel">
+        <div className = "signup">
+            <div className="meta-header"></div>
+            <h1 className="signup-header">Enter Your Information Below</h1>
+            <form className="signupForm">
+                <label className="FormLabel">
                     Username:
-                    <input type="text" className="usernameText" onChange={(event) => setUsername(event.target.value)} />
                 </label>
-                <label className="passwordLabel">
+                <input type="text" className="FormInput" onChange={(event) => setUsername(event.target.value)} />
+                
+                <label className="FormLabel">
                     Password:
-                    <input type="text" className="passwordText" onChange={(event) => setPassword(event.target.value)} />
                 </label>
-                <label className = "firstNameLabel">
+                <input type="text" className="FormInput" onChange={(event) => setPassword(event.target.value)} />
+                
+                <label className = "FormLabel">
                     First Name:
-                    <input type = "text" className="firstNameText" onChange = {(event) => setFirstName(event.target.value)} />
                 </label>
-                <label className = "LastNameLabel">
+                <input type = "text" className="FormInput" onChange = {(event) => setFirstName(event.target.value)} />
+                
+                <label className = "FormLabel">
                     Last Name:
-                    <input type = "text" className="LastNameText" onChange = {(event) => setLastName(event.target.value)} />
                 </label>
-                <label className = "addressLabel">
+                <input type = "text" className="FormInput" onChange = {(event) => setLastName(event.target.value)} />
+                
+                <label className = "FormLabel">
                     Address:
-                    <input type = "text" className="addressText" onChange = {(event) => setAddress(event.target.value)} />
                 </label>
-                <label className = "genderLabel">
+                <input type = "text" className="FormInput" onChange = {(event) => setAddress(event.target.value)} />
+                
+                <label className = "FormLabel">
                     Gender:
-                    <input type = "text" className="GenderText" onChange = {(event) => setGender(event.target.value)} />
                 </label>
-                <div>
-                    <button type="submit" className="submitBox" onClick={onSignup}>Sign Up</button>
-                </div>
+                <input type = "text" className="FormInput" onChange = {(event) => setGender(event.target.value)} />               
              </form>
+            <div className="submitWrapper">
+                <button type="submit" className="submitBox" onClick={onSignup}>Sign Up</button>
+            </div>
         </div>
     )
 }

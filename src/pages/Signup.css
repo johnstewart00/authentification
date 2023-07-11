@@ -1,0 +1,39 @@
+.signup {
+    background-color: #d1ecf8;
+    height: 100vh;
+}
+.meta-header {
+    height: 80px;
+    background-color: rgb(252, 247, 238);
+}
+.signupForm {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(384px, 1fr));
+    grid-gap: 16px;
+    
+}
+
+.FormLabel {
+    margin: 5px;
+    grid-column-start: 1;
+    text-align: right;
+}
+
+.FormInput {
+    grid-column-end: auto;
+    grid-row-end: auto;
+    border: 1px solid #090808;
+    overflow: auto;
+    max-height: 500px;
+}
+.signup-header {    
+    padding-top: 50px;
+    text-align: center;
+}
+
+.submitWrapper {
+    text-align: center;
+}
+.submitBox {
+    margin: 20px;
+}

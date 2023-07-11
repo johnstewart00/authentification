@@ -1,0 +1,58 @@
+.page {
+  background-color: #d1ecf8;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+}
+.login-header {
+  height: 80px;
+  background-color: rgb(252, 247, 238);
+}
+
+.body {
+ text-align: center;
+ align-items: center;
+}
+.formBox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  height: 40vh;
+  width: 50%;
+  border: solid;
+  border-color: rgb(185, 184, 184);
+  border-width: 1px;
+  margin-left: 25%; 
+  justify-content: center;
+}
+
+.signinForm {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);  
+  grid-gap: 16px;
+  line-height: 10px;
+}
+.LoginLabel {
+  margin: 5px;
+  grid-column-start: 1;
+  text-align: right;
+}
+.LoginInput {
+  grid-column-end: span 1;
+  grid-row-end: span 1;
+  border: 1px solid #090808;
+  overflow: auto;
+  max-height: 500px;
+  
+}
+
+.submitBox {
+  margin: 3px;
+}
+.signinWrapper {
+  text-align: center;
+}
+.signupButton {
+  width: max-content;
+}

@@ -1,5 +1,6 @@
 import { Outlet, Link, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./Layout.css"
 const Layout = () => {
     const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState('false')
@@ -23,12 +24,12 @@ const Layout = () => {
             <>
             <nav>
                 <ul>
-                    <li>
+                    <div className = "header">
                         <Link to="/">Home</Link>
-                    </li>
-                    <li>
+                    </div>
+                    <div className = "header">
                         <Link to="/Account">Account Details</Link>
-                    </li>
+                    </div>
                 </ul>
             </nav>
         
@@ -40,9 +41,9 @@ const Layout = () => {
             <>
             <nav>
                 <ul>
-                    <li>
+                    <div className = "header">
                         <Link to="/signup">Sign up</Link>
-                    </li>
+                    </div>
                 </ul>
             </nav>
         
