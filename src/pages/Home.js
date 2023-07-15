@@ -11,7 +11,7 @@ const Home = () => {
         setFirstName(localStorage.getItem("firstName"));
         if(!logIn) {
             localStorage.setItem("authenticated", false);
-            navigate("/login")
+            navigate("/authentification")
         }
     }, [logIn])
     let handleClick = () => {

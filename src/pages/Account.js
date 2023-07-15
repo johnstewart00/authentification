@@ -23,10 +23,10 @@ const Account = () => {
         console.log('logIn in Account Details is: ',logIn);
         if(!logIn) {
             localStorage.setItem("authenticated", false);
-            navigate("/login")
+            navigate("/authentification")
         }
     }, [logIn])
-    
+
     let handleClick = () => {
         console.log('in handleClick')
         setLogIn(false);
