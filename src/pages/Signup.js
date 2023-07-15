@@ -18,7 +18,7 @@ const Signup = () => {
         console.log('signup');
         console.log(username, password);
         try {
-         const response = await axios.post('http://localhost:3001/signup', {
+         const response = await axios.post('https://git.heroku.com/authentificationapp.git/signup', {
             username,
             password,
             firstName, 

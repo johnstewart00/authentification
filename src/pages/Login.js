@@ -15,7 +15,7 @@ function Login() {
     console.log(username, password);
     try {
       // Modify the login request in the onLogin function
-      const response = await axios.get('http://localhost:3001/login', {
+      const response = await axios.get('https://git.heroku.com/authentificationapp.git/login', {
         params: {
           username,
           password
