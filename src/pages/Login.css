@@ -1,17 +1,9 @@
-.page {
-  background-color: #d1ecf8;
-  height: 100vh;
-  margin: 0px;
-  padding: 0px;
-}
-.login-header {
-  height: 80px;
-  background-color: rgb(252, 247, 238);
-}
-
 .body {
- text-align: center;
- align-items: center;
+  height: 100vh;
+  background-color: #d1ecf8;
+  text-align: center;
+  align-items: center;
+  padding-top: 15px;
 }
 .formBox {
   display: flex;
@@ -19,11 +11,12 @@
   text-align: center;
   align-items: center;
   height: 40vh;
-  width: 50%;
+  width: auto;
   border: solid;
   border-color: rgb(185, 184, 184);
   border-width: 1px;
-  margin-left: 25%; 
+  margin-left: 20%; 
+  margin-right:20%;
   justify-content: center;
 }
 
@@ -47,12 +40,13 @@
   
 }
 
-.submitBox {
-  margin: 3px;
+.LoginButton {
+  margin: 10px;
+  width: 90px;
 }
 .signinWrapper {
   text-align: center;
 }
 .signupButton {
-  width: max-content;
+  width: 90px;
 }

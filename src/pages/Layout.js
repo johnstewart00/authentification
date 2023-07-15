@@ -1,6 +1,6 @@
 import { Outlet, Link, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./Layout.css"
+import "./Layout.css";
 const Layout = () => {
     const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState('false')
@@ -9,12 +9,9 @@ const Layout = () => {
         console.log('temp is: ', temp)
         if(temp == "true"){
             setLoggedIn(true);
+            navigate("/home")
         } else {
-            setLoggedIn(false);
-            temp = localStorage.getItem('signingup');
-            if(temp != "true") {
-                navigate("/login");
-            }     
+            navigate("/login");    
         }
     }, [localStorage.getItem("authenticated")])  
     
@@ -22,32 +19,24 @@ const Layout = () => {
     if(loggedIn) {
         return (
             <>
-            <nav>
-                <ul>
+                <nav>
                     <div className = "header">
-                        <Link to="/">Home</Link>
+                        <Link to="/home" className = "link" >Home</Link>
+                        <Link to="/account" className = "link" >Account Details</Link>
                     </div>
-                    <div className = "header">
-                        <Link to="/Account">Account Details</Link>
-                    </div>
-                </ul>
-            </nav>
-        
-            <Outlet />
+                </nav>
+                <Outlet />
             </>
         )
     } else {
         return (
             <>
-            <nav>
-                <ul>
+                <nav>
                     <div className = "header">
-                        <Link to="/signup">Sign up</Link>
+                        <Link to="/signup" className = "link" >Sign up</Link>
                     </div>
-                </ul>
-            </nav>
-        
-            <Outlet />
+                </nav>
+                <Outlet />
             </>
         )
     }

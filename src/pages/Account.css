@@ -1,0 +1,32 @@
+.accountDetailsGrid {
+    /* background-color: blueviolet; */
+    display: grid;
+    grid-template-columns: max-content max-content;  
+    grid-gap: 16px;
+    line-height: 20px;
+    justify-content: center;
+}
+ .description {
+    /* background-color: aqua; */
+    text-align: right;
+ }
+ .item {
+    /* background-color:aquamarine; */
+ }
+ .accountHeader {
+    text-align: center;
+ }
+ .accountPage {
+    background-color: #d1ecf8;
+    padding-top: 15px;
+    height: 100vh;
+ }
+ .linkTag {
+    display: grid;
+    text-align: center; 
+    justify-content: center;
+ }
+ .signoutButton {
+    width: max-content;
+    margin: 25px;
+ }

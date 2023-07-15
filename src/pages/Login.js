@@ -25,6 +25,10 @@ function Login() {
       // Handle success case here
       localStorage.setItem("authenticated", true);
       localStorage.setItem('firstName', response.data.firstName);
+      localStorage.setItem('lastName', response.data.lastName);
+      localStorage.setItem('address', response.data.address);
+      localStorage.setItem('username', response.data.username);
+      localStorage.setItem('gender', response.data.gender);
       navigate("/home");
     } catch (error) {
       console.log(error);
@@ -42,32 +46,30 @@ function Login() {
   }
 
   return (
-    <div className="page">
-      <div className="login-header"></div>
-      <div className="body">
-        <h2>Please Log In</h2>
-        <div className = "formBox">
-            <form className="signinForm">
-                <label className="LoginLabel">
-                    Username:
-                </label>
-                <input type="text" className="LoginInput" onChange={(event) => setUsername(event.target.value)} />
-                
-                <label className="LoginLabel">
-                    Password:
-                </label>
-                <input type="text" className="LoginInput" onChange={(event) => setPassword(event.target.value)} />
-            </form>
-            <div>
-                <button type="submit" className="submitBox" onSubmit={onLogin} >Login</button>
-            </div>
-            <h2>Don't have an account? </h2>
-            <div className = "signinWrapper">
-                <button className = "signupButton" onClick = {handleSignup}>Sign Up</button>
-            </div>
+    <div className="body">
+    <h2>Please Log In</h2>
+    <div className = "formBox">
+        <form className="signinForm">
+            <label className="LoginLabel">
+                Username:
+            </label>
+            <input type="text" className="LoginInput" onChange={(event) => setUsername(event.target.value)} />
+            
+            <label className="LoginLabel">
+                Password:
+            </label>
+            <input type="text" className="LoginInput" onChange={(event) => setPassword(event.target.value)} />
+        </form>
+        <div>
+            <button type="submit" className="LoginButton" onClick={onLogin} >Login</button>
         </div>
-      </div>
+        <h2>Don't have an account? </h2>
+        <div className = "signinWrapper">
+            <button className = "signupButton" onClick = {handleSignup}>Sign Up</button>
+        </div>
     </div>
+    </div>
+
   );
 }
 

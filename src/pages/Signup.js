@@ -28,7 +28,11 @@ const Signup = () => {
           })
           console.log(response);
           localStorage.setItem("authenticated", true);
-          localStorage.setItem("firstName", firstName)
+          localStorage.setItem("firstName", firstName);
+          localStorage.setItem("lastName", lastName);
+          localStorage.setItem("address", address);
+          localStorage.setItem("gender", gender);
+          localStorage.setItem("username", username);
           navigate("/home");
         } catch (error) {
           console.log(error);
@@ -42,7 +46,6 @@ const Signup = () => {
 
     return (
         <div className = "signup">
-            <div className="meta-header"></div>
             <h1 className="signup-header">Enter Your Information Below</h1>
             <form className="signupForm">
                 <label className="FormLabel">
@@ -76,7 +79,7 @@ const Signup = () => {
                 <input type = "text" className="FormInput" onChange = {(event) => setGender(event.target.value)} />               
              </form>
             <div className="submitWrapper">
-                <button type="submit" className="submitBox" onClick={onSignup}>Sign Up</button>
+                <button type="submit" className="signupButton" onClick={onSignup}>Sign Up</button>
             </div>
         </div>
     )

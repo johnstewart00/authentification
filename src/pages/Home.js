@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
 
 const Home = () => {
     const [firstName, setFirstName] = useState('');
@@ -18,10 +19,10 @@ const Home = () => {
         setLogIn(false);
     }
     return (
-    <div>
-        <p>Welcome to your Dashboard {firstName}</p>
-        <a to="/login">
-            <button onClick = {handleClick}>Sign Out</button>
+    <div className = "homeBody" >
+        <h1 className = "welcome">{firstName}, welcome to your dashboard</h1>
+        <a to="/login" className = "linkTag">
+            <button onClick = {handleClick} className = "signoutButton">Sign Out</button>
         </a>
     </div> );
 }
