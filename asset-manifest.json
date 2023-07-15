@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AuthApp/static/css/main.05c00439.css",
+    "main.js": "/AuthApp/static/js/main.9c34ae15.js",
+    "index.html": "/AuthApp/index.html",
+    "main.05c00439.css.map": "/AuthApp/static/css/main.05c00439.css.map",
+    "main.9c34ae15.js.map": "/AuthApp/static/js/main.9c34ae15.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05c00439.css",
+    "static/js/main.9c34ae15.js"
+  ]
+}
