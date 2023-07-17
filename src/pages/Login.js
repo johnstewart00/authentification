@@ -15,7 +15,7 @@ function Login() {
     console.log(username, password);
     try {
       // Modify the login request in the onLogin function
-      const response = await axios.get('https://authentificationapp-04ab233f11ff.herokuapp.com/authentification', {
+      const response = await axios.get('https://authentificationapp-04ab233f11ff.herokuapp.com/login', {
         params: {
           username,
           password,
