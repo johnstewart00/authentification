@@ -18,7 +18,8 @@ function Login() {
       const response = await axios.get('https://authentificationapp-04ab233f11ff.herokuapp.com/authentification', {
         params: {
           username,
-          password
+          password,
+          APIKey: 'a4452169-4524-456c-b5e2-ba51f355ec48'
         }
       });
       console.log(response);
