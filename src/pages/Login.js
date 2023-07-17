@@ -19,7 +19,7 @@ function Login() {
         params: {
           username,
           password,
-          APIKey: 'a4452169-4524-456c-b5e2-ba51f355ec48'
+          key: 'a4452169-4524-456c-b5e2-ba51f355ec48'
         }
       });
       console.log(response);
