@@ -11,7 +11,7 @@ const Layout = () => {
             setLoggedIn(true);
             navigate("/home")
         } else {
-            navigate("/authentification");    
+            //navigate("/authentification");    
         }
     }, [localStorage.getItem("authenticated")])  
     
