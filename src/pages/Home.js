@@ -21,7 +21,7 @@ const Home = () => {
     useEffect(() => {
         if(!logIn) {
             localStorage.setItem("authenticated", false);
-            navigate("/authentification")
+            navigate("/authentification");
         }
     }, [logIn]);
 
