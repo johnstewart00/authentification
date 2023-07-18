@@ -8,7 +8,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
-
+  const [error, setError] = useState('');
   const onLogin = async (event) => {
     event.preventDefault();
     console.log('login');
@@ -35,8 +35,9 @@ function Login() {
       console.log(error);
       if (error.response && error.response.data) {
         console.log(error.response.data); // Access the error message directly
+        setError(error.response.data);
       } else {
-        console.log('An error occurred'); // Handle other error scenarios if needed
+        console.log('A weird error occurred'); // Handle other error scenarios if needed
       }
     }
   };
@@ -63,6 +64,9 @@ function Login() {
         </form>
         <div>
             <button type="submit" className="LoginButton" onClick={onLogin} >Login</button>
+        </div>
+        <div>
+            {error}
         </div>
         <h2>Don't have an account? </h2>
         <div className = "signinWrapper">
