@@ -12,6 +12,12 @@ const Account = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const temp = localStorage.getItem("authenticated");
+        if(temp == "true"){
+            setLogIn(true);
+        } else {
+            setLogIn(false);
+        }
         setusername(localStorage.getItem('username'));
         setFirstName(localStorage.getItem('firstName'));
         setLastName(localStorage.getItem('lastName'));
