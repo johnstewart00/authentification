@@ -14,6 +14,7 @@ const Layout = () => {
     })  
     console.log('logged in here is: ',loggedIn)
     if(loggedIn == 'true') {
+        console.log('now logged in is: ', loggedIn);
         console.log('returning true layout');
         return (
             <>
