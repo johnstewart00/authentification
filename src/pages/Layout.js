@@ -17,6 +17,7 @@ const Layout = () => {
     
     console.log('logged in here is: ',loggedIn)
     if(loggedIn) {
+        console.log('returning true layout');
         return (
             <>
                 <nav>
@@ -29,6 +30,7 @@ const Layout = () => {
             </>
         )
     } else {
+        console.log('returning false layout')
         return (
             <>
                 <nav>
