@@ -10,11 +10,8 @@ const Layout = () => {
         if(temp == "true"){
             setLoggedIn(true);
             navigate("/home")
-        } else {
-            //navigate("/authentification");    
         }
-    }, [localStorage.getItem("authenticated")])  
-    
+    })  
     console.log('logged in here is: ',loggedIn)
     if(loggedIn) {
         console.log('returning true layout');
