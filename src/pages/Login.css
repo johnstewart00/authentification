@@ -21,6 +21,7 @@
 }
 
 .signinForm {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, 200px);  
   grid-gap: 16px;
@@ -49,4 +50,16 @@
 }
 .signupButton {
   width: 90px;
+}
+.errorWrapper {
+  justify-content: center;
+  text-align: center;
+  display: grid;
+}
+.errorContainer {
+  background-color: rgb(252, 247, 238);
+  height: max-content;
+  width: max-content;
+  padding-inline: 10px;
+  line-height: 30px;
 }

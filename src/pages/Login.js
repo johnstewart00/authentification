@@ -65,8 +65,10 @@ function Login() {
         <div>
             <button type="submit" className="LoginButton" onClick={onLogin} >Login</button>
         </div>
-        <div>
-            {error}
+        <div className = "errorWrapper">
+            <div className = "errorContainer">
+                {error}
+            </div>
         </div>
         <h2>Don't have an account? </h2>
         <div className = "signinWrapper">
