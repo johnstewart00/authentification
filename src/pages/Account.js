@@ -22,8 +22,8 @@ const Account = () => {
     useEffect(() => {
         console.log('logIn in Account Details is: ',logIn);
         if(!logIn) {
-            localStorage.setItem("authenticated", false);
-            navigate("/authentification")
+            localStorage.setItem("authenticated", 'false');
+            navigate("/authentification");
         }
     }, [logIn])
 

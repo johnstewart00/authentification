@@ -6,17 +6,26 @@ const Layout = () => {
     const [loggedIn, setLoggedIn] = useState('false')
     useEffect (() => {
         let temp = localStorage.getItem("authenticated");
-        console.log('temp is: ', temp)
+        console.log('temp in UseEffect is: ', temp)
         if(temp == "true"){
             setLoggedIn(true);
         } else {
             setLoggedIn(false);
             navigate('/authentification')
         }
-    }, [])  
+    }, []);
+    
+    let temp = localStorage.getItem("authenticated");
+    console.log('temp outside UseEffect is: ', temp)
+    if(temp == "true"){
+        setLoggedIn(true);
+    } else {
+        setLoggedIn(false);
+        navigate('/authentification')
+    }
 
-    console.log('logged in here is: ',loggedIn);
-
+    console.log('logged in layout is: ',loggedIn);
+    
     if(loggedIn) {
         console.log('now logged in is: ', loggedIn);
         console.log('returning true layout');
