@@ -9,10 +9,14 @@ const Layout = () => {
         console.log('temp is: ', temp)
         if(temp == "true"){
             setLoggedIn(true);
-            navigate("/home")
+        } else {
+            setLoggedIn(false);
+            navigate('/authentification')
         }
-    })  
-    console.log('logged in here is: ',loggedIn)
+    }, [])  
+
+    console.log('logged in here is: ',loggedIn);
+
     if(loggedIn == 'true') {
         console.log('now logged in is: ', loggedIn);
         console.log('returning true layout');
