@@ -13,7 +13,7 @@ const Layout = () => {
             setLoggedIn(false);
             navigate('/authentification')
         }
-    }, []);
+    });
     
     let temp = localStorage.getItem("authenticated");
     console.log('temp outside UseEffect is: ', temp)
