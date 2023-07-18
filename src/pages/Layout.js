@@ -15,33 +15,33 @@ const Layout = () => {
         }
     }, [localStorage.getItem("authenticated")])  
     
-    console.log('logged in here is: ',loggedIn)
-    if(loggedIn) {
-        console.log('returning true layout');
-        return (
-            <>
-                <nav>
-                    <div className = "header">
-                        <Link to="/home" className = "link" >Home</Link>
-                        <Link to="/account" className = "link" >Account Details</Link>
-                    </div>
-                </nav>
-                <Outlet />
-            </>
-        )
-    } else {
-        console.log('returning false layout')
-        return (
-            <>
-                <nav>
-                    <div className = "header">
-                        <Link to="/signup" className = "link" >Sign up</Link>
-                    </div>
-                </nav>
-                <Outlet />
-            </>
-        )
-    }
-};
+//     console.log('logged in here is: ',loggedIn)
+//     if(loggedIn) {
+//         console.log('returning true layout');
+//         return (
+//             <>
+//                 <nav>
+//                     <div className = "header">
+//                         <Link to="/home" className = "link" >Home</Link>
+//                         <Link to="/account" className = "link" >Account Details</Link>
+//                     </div>
+//                 </nav>
+//                 <Outlet />
+//             </>
+//         )
+//     } else {
+//         console.log('returning false layout')
+//         return (
+//             <>
+//                 <nav>
+//                     <div className = "header">
+//                         <Link to="/signup" className = "link" >Sign up</Link>
+//                     </div>
+//                 </nav>
+//                 <Outlet />
+//             </>
+//         )
+//     }
+ };
 
 export default Layout;
