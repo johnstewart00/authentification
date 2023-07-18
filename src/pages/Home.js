@@ -6,14 +6,25 @@ const Home = () => {
     const [firstName, setFirstName] = useState('');
     const navigate = useNavigate();
     const [logIn, setLogIn] = useState(true);
+
     useEffect(() => {
+        const temp = localStorage.getItem("authenticated");
+        if(temp == "true"){
+            setLogIn(true);
+        } else {
+            setLogIn(false);
+        }
         console.log('logIn in Home is: ',logIn);
         setFirstName(localStorage.getItem("firstName"));
+    });
+
+    useEffect(() => {
         if(!logIn) {
             localStorage.setItem("authenticated", false);
             navigate("/authentification")
         }
-    }, [logIn])
+    }, [logIn]);
+
     let handleClick = () => {
         console.log('in handleClick')
         setLogIn(false);

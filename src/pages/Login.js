@@ -24,7 +24,7 @@ function Login() {
       });
       console.log(response);
       // Handle success case here
-      localStorage.setItem("authenticated", true);
+      localStorage.setItem("authenticated", 'true');
       localStorage.setItem('firstName', response.data.firstName);
       localStorage.setItem('lastName', response.data.lastName);
       localStorage.setItem('address', response.data.address);
