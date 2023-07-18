@@ -26,7 +26,7 @@ const Signup = () => {
         console.log('authenticated in Sign Up is: ',authenticated);
         if(authenticated) {
             localStorage.setItem("authenticated", 'true');
-            navigate("/home");
+            navigate("/authentification/home");
         }
     }, [authenticated])
 
@@ -50,7 +50,7 @@ const Signup = () => {
           localStorage.setItem("address", address);
           localStorage.setItem("gender", gender);
           localStorage.setItem("username", username);
-          navigate("/home");
+          navigate("/authentification/home");
         } catch (error) {
           console.log(error);
           if (error.response && error.response.data) {

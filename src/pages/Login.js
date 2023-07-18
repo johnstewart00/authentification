@@ -30,7 +30,7 @@ function Login() {
       localStorage.setItem('address', response.data.address);
       localStorage.setItem('username', response.data.username);
       localStorage.setItem('gender', response.data.gender);
-      navigate("/home");
+      navigate("/authentification/home");
     } catch (error) {
       console.log(error);
       if (error.response && error.response.data) {
@@ -44,7 +44,7 @@ function Login() {
 
   let handleSignup = () => {
     localStorage.setItem("signingup", true);
-    navigate("/signup");
+    navigate("/authentification/signup");
   }
 
   return (
