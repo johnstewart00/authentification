@@ -11,7 +11,24 @@ const Signup = () => {
     const [gender, setGender] = useState('');
     const [address, setAddress] = useState('');
     const navigate = useNavigate();
-    const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
+    const [authenticated, setauthenticated] = useState();
+
+    useEffect(()=> {
+        const temp = localStorage.getItem("authenticated");
+        if(temp == "true"){
+            setauthenticated(true);
+        } else {
+            setauthenticated(false);
+        }
+    });
+
+    useEffect(() => {
+        console.log('authenticated in Sign Up is: ',authenticated);
+        if(authenticated) {
+            localStorage.setItem("authenticated", 'true');
+            navigate("/home");
+        }
+    }, [authenticated])
 
     const onSignup = async (event) => {
         event.preventDefault();
