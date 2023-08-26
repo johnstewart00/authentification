@@ -17,8 +17,7 @@ const Account = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("Authenticated is: ", authenticated);
-    if (!authenticated && authenticated !== undefined) {
+    if (!authenticated) {
       navigate("/authentification");
     }
   }, [authenticated]);
