@@ -29,17 +29,10 @@ function Login() {
           params: {
             username,
             password,
-            //   key: 'a4452169-4524-456c-b5e2-ba51f355ec48'
           },
         }
       );
       console.log(response);
-      // Handle success case here
-      // localStorage.setItem("firstName", response.data.firstName);
-      // localStorage.setItem("lastName", response.data.lastName);
-      // localStorage.setItem("address", response.data.address);
-      // localStorage.setItem("username", response.data.username);
-      // localStorage.setItem("gender", response.data.gender);
       setAuthenticated(true);
       setFirstName(response.data.firstName);
       setLastName(response.data.lastName);
