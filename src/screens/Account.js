@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Account.css";
 import { useAuth } from "../AuthContext";
+import backArrow from "../icons/backArrow.png";
 
 const Account = () => {
   const {
@@ -25,6 +26,9 @@ const Account = () => {
   let handleClick = () => {
     setAuthenticated(false);
   };
+  const toHome = () => {
+    navigate("/authentification/home");
+  };
 
   return (
     <div>
@@ -42,11 +46,16 @@ const Account = () => {
           <p className="description">Gender: </p>
           <p className="item">{gender}</p>
         </div>
-        <a to="/login" className="linkTag">
-          <button onClick={handleClick} className="signoutButton">
-            Sign Out
+        <div className="callToActionRow">
+          <button type="submit" className="AccountButton">
+            <img src={backArrow} height={15} width={15} onClick={toHome} />
           </button>
-        </a>
+          <a to="/login" className="linkTag">
+            <button onClick={handleClick} className="AccountButton">
+              Sign Out
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );
