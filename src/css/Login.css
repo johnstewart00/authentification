@@ -1,9 +1,11 @@
+.h2 {
+  font-family: Georgia;
+}
+
 .body {
   height: 100vh;
-  background-color: #d1ecf8;
-  text-align: center;
-  align-items: center;
-  padding-top: 15px;
+  justify-content: center;
+  display: flex
 }
 .formBox {
   display: flex;
@@ -21,30 +23,25 @@
 }
 
 .signinForm {
-  margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(3, 200px);  
-  grid-gap: 16px;
-  line-height: 10px;
+  margin-top: 10px;
+  line-height: 15px;
+  list-style-type: none;
 }
-.LoginLabel {
-  margin: 5px;
-  grid-column-start: 1;
-  text-align: right;
+.li {
+  display: flex;
+  justify-content: flex-end;
+  padding: .5em
+
 }
-.LoginInput {
-  grid-column-end: span 1;
-  grid-row-end: span 1;
-  border: 1px solid #090808;
-  overflow: auto;
-  max-height: 500px;
-  
+.li > label {
+  padding: .5em 1em .5em 0;
+  flex: 1;
+}
+.li > input {
+  flex: 1;
 }
 
-.LoginButton {
-  margin: 10px;
-  width: 90px;
-}
 .signinWrapper {
   text-align: center;
 }

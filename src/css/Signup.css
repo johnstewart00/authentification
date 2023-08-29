@@ -1,11 +1,13 @@
 .signup {
-    background-color: #d1ecf8;
     height: 100vh;
     padding: 1px;
+    display: flex;
+    justify-content: center;
 }
 .signupForm {
     display: grid;
-    grid-template-columns: repeat(3, minmax(384px, 1fr));
+    justify-content: center;
+    grid-template-columns: repeat(2, minmax(175px, 0fr));
     grid-gap: 16px;  
 }
 
@@ -22,13 +24,13 @@
     overflow: auto;
     max-height: 500px;
 }
-.signup-header {    
-    padding-top: 50px;
+.signup-header {   
     text-align: center;
 }
 
 .submitWrapper {
-    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 .signupButton {
     margin: 20px;

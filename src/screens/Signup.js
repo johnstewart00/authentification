@@ -2,8 +2,12 @@ import axios from "axios";
 import "../css/Signup.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import backArrow from "../icons/backArrow.png";
 import { useAuth } from "../AuthContext";
+import { Box } from "@mui/material";
+import { Color } from "../components/Colors";
+import MuiButton from "../components/MuiButtons";
+import { Icons } from "../icons/materialIcons";
+import MuiBox from "../components/MuiBox";
 
 const Signup = () => {
   const {
@@ -30,6 +34,10 @@ const Signup = () => {
   }, [authenticated]);
 
   const goBack = () => {
+    navigate("/authentification");
+  };
+
+  const toLogin = () => {
     navigate("/authentification");
   };
 
@@ -62,64 +70,80 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup">
-      <h1 className="signup-header">Enter Your Information Below</h1>
-      <form className="signupForm">
-        <label className="FormLabel">Username:</label>
-        <input
-          type="text"
-          className="FormInput"
-          onChange={(event) => setUsername(event.target.value)}
-        />
+    <div className="signup" style={{ backgroundColor: Color.green }}>
+      <MuiBox
+        maxWidth="sm"
+        maxHeight={450}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        boxShadow={12}
+        borderRadius={5}
+        backgroundColor={Color.white}
+        content={
+          <>
+            <h1 className="signup-header">Enter Your Information Below</h1>
+            <form className="signupForm" style={{ width: 500 }}>
+              <label className="FormLabel">Username:</label>
+              <input
+                type="text"
+                className="FormInput"
+                onChange={(event) => setUsername(event.target.value)}
+              />
 
-        <label className="FormLabel">Password:</label>
-        <input
-          type="text"
-          className="FormInput"
-          onChange={(event) => setPassword(event.target.value)}
-        />
+              <label className="FormLabel">Password:</label>
+              <input
+                type="text"
+                className="FormInput"
+                onChange={(event) => setPassword(event.target.value)}
+              />
 
-        <label className="FormLabel">First Name:</label>
-        <input
-          type="text"
-          className="FormInput"
-          onChange={(event) => setFirstName(event.target.value)}
-        />
+              <label className="FormLabel">First Name:</label>
+              <input
+                type="text"
+                className="FormInput"
+                onChange={(event) => setFirstName(event.target.value)}
+              />
 
-        <label className="FormLabel">Last Name:</label>
-        <input
-          type="text"
-          className="FormInput"
-          onChange={(event) => setLastName(event.target.value)}
-        />
+              <label className="FormLabel">Last Name:</label>
+              <input
+                type="text"
+                className="FormInput"
+                onChange={(event) => setLastName(event.target.value)}
+              />
 
-        <label className="FormLabel">Address:</label>
-        <input
-          type="text"
-          className="FormInput"
-          onChange={(event) => setAddress(event.target.value)}
-        />
+              <label className="FormLabel">Address:</label>
+              <input
+                type="text"
+                className="FormInput"
+                onChange={(event) => setAddress(event.target.value)}
+              />
 
-        <label className="FormLabel">Gender:</label>
-        <input
-          type="text"
-          className="FormInput"
-          onChange={(event) => setGender(event.target.value)}
-        />
-      </form>
-      <div className="submitWrapper">
-        <button type="submit">
-          <img src={backArrow} height={15} width={15} onClick={goBack} />
-        </button>
-        <button
-          type="submit"
-          className="signupButton"
-          height={40}
-          onClick={onSignup}
-        >
-          Sign Up
-        </button>
-      </div>
+              <label className="FormLabel">Gender:</label>
+              <input
+                type="text"
+                className="FormInput"
+                onChange={(event) => setGender(event.target.value)}
+              />
+            </form>
+            <div className="submitWrapper">
+              <MuiButton
+                variant="outlined"
+                icon={Icons.ArrowBackBlack}
+                onClick={toLogin}
+                color={Color.black}
+              />
+              <MuiButton
+                onClick={onSignup}
+                title="Sign Up"
+                variant="contained"
+                backgroundColor={Color.tangerineYellow}
+                color={Color.black}
+              />
+            </div>
+          </>
+        }
+      />
     </div>
   );
 };

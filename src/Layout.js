@@ -1,27 +1,45 @@
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./css/Layout.css";
 import { useAuth } from "./AuthContext";
+import MuiButton from "./components/MuiButtons";
 const Layout = () => {
   const { authenticated } = useAuth();
+  const navigate = useNavigate();
+  const handleSignupClick = () => {
+    navigate("/authentification/signup");
+  };
+  const handleHomeClick = () => {
+    navigate("/authentification/home");
+  };
+  const handleAccountClick = () => {
+    navigate("/authentification/account");
+  };
   return (
     <>
       <nav>
         <div className="header">
           {authenticated ? (
             <>
-              <Link to="/authentification/home" className="link">
-                Home
-              </Link>
-              <Link to="/authentification/account" className="link">
-                Account Details
-              </Link>
+              <MuiButton
+                variant="outlined"
+                onClick={handleHomeClick}
+                title="Home"
+              />
+
+              <MuiButton
+                variant="outlined"
+                onClick={handleAccountClick}
+                title="Account Details"
+              />
             </>
           ) : null}
           {!authenticated ? (
-            <Link to="/authentification/signup" className="link">
-              Sign up
-            </Link>
+            <MuiButton
+              variant="outlined"
+              onClick={handleSignupClick}
+              title="Sign up"
+            />
           ) : null}
         </div>
       </nav>

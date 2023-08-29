@@ -3,6 +3,9 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
+import MuiButton from "../components/MuiButtons";
+import { Box } from "@mui/material";
+import { Color } from "../components/Colors";
 
 function Login() {
   const [password, setPassword] = useState("");
@@ -56,39 +59,85 @@ function Login() {
   };
 
   return (
-    <div className="body">
-      <h2>Please Log In</h2>
-      <div className="formBox">
-        <form className="signinForm">
-          <label className="LoginLabel">Username:</label>
-          <input
-            type="text"
-            className="LoginInput"
-            onChange={(event) => setUsername(event.target.value)}
-          />
+    <div style={{ backgroundColor: Color.green }} className="body">
+      <Box
+        maxWidth={500}
+        maxHeight={500}
+        marginTop={10}
+        sx={{
+          backgroundColor: Color.white,
+          padding: 6,
+        }}
+        boxShadow={15}
+        borderRadius={5}
+        flex={1}
+        display="grid"
+        justifyContent="center"
+      >
+        <h2
+          style={{
+            textAlign: "center",
+            color: Color.black,
+          }}
+          className="h2"
+        >
+          Please Log In
+        </h2>
+        <Box
+          sx={{
+            backgroundColor: "white",
+            width: 300,
+            textAlign: "center",
+            alignItems: "center",
+            padding: 5,
+          }}
+          boxShadow={15}
+          borderRadius={5}
+        >
+          <ul className="signinForm">
+            <li className="li">
+              <label>Username:</label>
+              <input
+                type="text"
+                onChange={(event) => setUsername(event.target.value)}
+              />
+            </li>
+            <li className="li">
+              <label>Password:</label>
+              <input
+                type="text"
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </li>
+            <li className="li">
+              <MuiButton
+                variant="contained"
+                className="LoginButton"
+                onClick={onLogin}
+                title="Login"
+                margin={0}
+                marginTop={0}
+                backgroundColor={Color.tangerineYellow}
+                color={Color.black}
+              />
+            </li>
+          </ul>
 
-          <label className="LoginLabel">Password:</label>
-          <input
-            type="text"
-            className="LoginInput"
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </form>
-        <div>
-          <button type="submit" className="LoginButton" onClick={onLogin}>
-            Login
-          </button>
-        </div>
-        <div className="errorWrapper">
-          <div className="errorContainer">{error}</div>
-        </div>
-        <h2>Don't have an account? </h2>
-        <div className="signinWrapper">
-          <button className="signupButton" onClick={handleSignup}>
-            Sign Up
-          </button>
-        </div>
-      </div>
+          <div className="errorWrapper">
+            <div className="errorContainer">{error}</div>
+          </div>
+          <h2 className="h2">Don't have an account? </h2>
+          <div className="signinWrapper">
+            <MuiButton
+              variant="outlined"
+              size="small"
+              className="signupButton"
+              onClick={handleSignup}
+              title="Sign up"
+            />
+          </div>
+        </Box>
+      </Box>
     </div>
   );
 }

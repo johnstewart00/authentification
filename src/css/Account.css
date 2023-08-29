@@ -17,9 +17,10 @@
     text-align: center;
  }
  .accountPage {
-    background-color: #d1ecf8;
     padding-top: 15px;
     height: 100vh;
+    display: flex;
+    justify-content: center;
  }
  .linkTag {
     display: grid;
