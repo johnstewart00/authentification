@@ -80,7 +80,7 @@ const Signup = () => {
     <div className="signup" style={{ backgroundColor: Color.green }}>
       <MuiBox
         maxWidth="sm"
-        maxHeight={450}
+        maxHeight={480}
         display="flex"
         flexDirection="column"
         alignItems="center"
@@ -164,7 +164,9 @@ const Signup = () => {
                 </RadioGroup>
               </FormControl>
             </form>
-            {hasError ? <MuiBox margin={0} content={<h3>{error}</h3>} /> : null}
+            {hasError ? (
+              <MuiBox margin={0} minWidth={400} content={<h3>{error}</h3>} />
+            ) : null}
             <div className="submitWrapper">
               <MuiButton
                 variant="outlined"

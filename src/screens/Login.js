@@ -80,8 +80,8 @@ function Login() {
             </h2>
             <MuiBox
               minWidth={470}
-              minHeight={300}
-              maxHeight={350}
+              minHeight={330}
+              maxHeight={375}
               margin={0}
               content={
                 <>
