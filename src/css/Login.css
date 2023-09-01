@@ -23,8 +23,7 @@
 }
 
 .signinForm {
-  display: grid;
-  margin-top: 10px;
+  margin-top: 15px;
   line-height: 15px;
   list-style-type: none;
 }

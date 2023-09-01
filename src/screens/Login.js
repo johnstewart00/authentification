@@ -6,6 +6,7 @@ import { useAuth } from "../AuthContext";
 import MuiButton from "../components/MuiButtons";
 import { Box } from "@mui/material";
 import { Color } from "../components/Colors";
+import MuiBox from "../components/MuiBox";
 
 function Login() {
   const [password, setPassword] = useState("");
@@ -60,84 +61,79 @@ function Login() {
 
   return (
     <div style={{ backgroundColor: Color.green }} className="body">
-      <Box
-        maxWidth={500}
-        maxHeight={500}
-        marginTop={10}
-        sx={{
-          backgroundColor: Color.white,
-          padding: 6,
-        }}
+      <MuiBox
+        maxHeight={475}
+        marginTop={6}
+        padding={4}
         boxShadow={15}
         borderRadius={5}
-        flex={1}
-        display="grid"
-        justifyContent="center"
-      >
-        <h2
-          style={{
-            textAlign: "center",
-            color: Color.black,
-          }}
-          className="h2"
-        >
-          Please Log In
-        </h2>
-        <Box
-          sx={{
-            backgroundColor: "white",
-            width: 300,
-            textAlign: "center",
-            alignItems: "center",
-            padding: 5,
-          }}
-          boxShadow={15}
-          borderRadius={5}
-        >
-          <ul className="signinForm">
-            <li className="li">
-              <label>Username:</label>
-              <input
-                type="text"
-                onChange={(event) => setUsername(event.target.value)}
-              />
-            </li>
-            <li className="li">
-              <label>Password:</label>
-              <input
-                type="text"
-                onChange={(event) => setPassword(event.target.value)}
-              />
-            </li>
-            <li className="li">
-              <MuiButton
-                variant="contained"
-                className="LoginButton"
-                onClick={onLogin}
-                title="Login"
-                margin={0}
-                marginTop={0}
-                backgroundColor={Color.tangerineYellow}
-                color={Color.black}
-              />
-            </li>
-          </ul>
-
-          <div className="errorWrapper">
-            <div className="errorContainer">{error}</div>
-          </div>
-          <h2 className="h2">Don't have an account? </h2>
-          <div className="signinWrapper">
-            <MuiButton
-              variant="outlined"
-              size="small"
-              className="signupButton"
-              onClick={handleSignup}
-              title="Sign up"
+        content={
+          <>
+            <h2
+              style={{
+                textAlign: "center",
+                color: Color.black,
+              }}
+              className="h2"
+            >
+              Please Log In
+            </h2>
+            <MuiBox
+              minWidth={470}
+              minHeight={300}
+              maxHeight={350}
+              margin={0}
+              content={
+                <>
+                  <ul className="signinForm">
+                    <li className="li">
+                      <label>Username:</label>
+                      <input
+                        type="text"
+                        onChange={(event) => setUsername(event.target.value)}
+                      />
+                    </li>
+                    <li className="li">
+                      <label>Password:</label>
+                      <input
+                        type="text"
+                        onChange={(event) => setPassword(event.target.value)}
+                      />
+                    </li>
+                    <li className="li">
+                      <MuiButton
+                        variant="contained"
+                        className="LoginButton"
+                        onClick={onLogin}
+                        title="Login"
+                        margin={0}
+                        marginTop={0}
+                        backgroundColor={Color.tangerineYellow}
+                        color={Color.black}
+                      />
+                    </li>
+                  </ul>
+                  <div className="errorWrapper">
+                    <div className="errorContainer">{error}</div>
+                  </div>
+                  <h2 style={{ fontFamily: "Georgia" }}>
+                    Don't have an account?
+                  </h2>
+                  <div className="signinWrapper">
+                    <MuiButton
+                      variant="outlined"
+                      size="small"
+                      className="signupButton"
+                      onClick={handleSignup}
+                      title="Sign up"
+                    />
+                  </div>
+                </>
+              }
             />
-          </div>
-        </Box>
-      </Box>
+          </>
+        }
+      />
     </div>
   );
 }

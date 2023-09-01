@@ -29,6 +29,8 @@ const Signup = () => {
   } = useAuth();
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
+  const [hasError, setHasError] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (authenticated) {
@@ -62,10 +64,12 @@ const Signup = () => {
       );
       console.log(response);
       setAuthenticated(true);
-    } catch (error) {
-      console.log(error);
-      if (error.response && error.response.data) {
-        console.log(error.response.data); // Access the error message directly
+    } catch (Error) {
+      console.log(Error);
+      setHasError(true);
+      if (Error.response && Error.response.data) {
+        console.log(Error.response.data); // Access the error message directly
+        setError(Error.response.data);
       } else {
         console.log("An error occurred"); // Handle other error scenarios if needed
       }
@@ -160,6 +164,7 @@ const Signup = () => {
                 </RadioGroup>
               </FormControl>
             </form>
+            {hasError ? <MuiBox margin={0} content={<h3>{error}</h3>} /> : null}
             <div className="submitWrapper">
               <MuiButton
                 variant="outlined"
