@@ -15,17 +15,21 @@
     margin: 5px;
     grid-column-start: 1;
     text-align: right;
+    font-family: Georgia;
 }
 
 .FormInput {
     grid-column-end: auto;
     grid-row-end: auto;
     border: 1px solid #090808;
+    box-shadow: 15;
     overflow: auto;
     max-height: 500px;
+    font-family: Georgia;
 }
 .signup-header {   
     text-align: center;
+    font-family: Georgia;
 }
 
 .submitWrapper {

@@ -7,14 +7,15 @@
     justify-content: center;
 }
  .description {
-    /* background-color: aqua; */
+   font-family: Georgia;
     text-align: right;
  }
  .item {
-    /* background-color:aquamarine; */
+   font-family: Georgia;
  }
  .accountHeader {
     text-align: center;
+    font-family: Georgia;
  }
  .accountPage {
     padding-top: 15px;

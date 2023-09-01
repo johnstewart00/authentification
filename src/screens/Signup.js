@@ -89,6 +89,7 @@ const Signup = () => {
                 type="text"
                 className="FormInput"
                 onChange={(event) => setUsername(event.target.value)}
+                boxShadow={15}
               />
 
               <label className="FormLabel">Password:</label>
