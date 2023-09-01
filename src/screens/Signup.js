@@ -3,11 +3,14 @@ import "../css/Signup.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
-import { Box } from "@mui/material";
+import { RadioGroup } from "@mui/material";
 import { Color } from "../components/Colors";
 import MuiButton from "../components/MuiButtons";
 import { Icons } from "../icons/materialIcons";
 import MuiBox from "../components/MuiBox";
+import Radio from "@mui/material/Radio";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import { FormControl, FormLabel } from "@mui/material";
 
 const Signup = () => {
   const {
@@ -120,12 +123,42 @@ const Signup = () => {
                 onChange={(event) => setAddress(event.target.value)}
               />
 
-              <label className="FormLabel">Gender:</label>
-              <input
-                type="text"
-                className="FormInput"
-                onChange={(event) => setGender(event.target.value)}
-              />
+              <FormControl
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: 500,
+                  justifyContent: "center",
+                }}
+              >
+                <FormLabel
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginRight: 5,
+                    color: Color.black,
+                  }}
+                >
+                  Gender:
+                </FormLabel>
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  value={gender}
+                  onChange={(event) => setGender(event.target.value)}
+                >
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                  />
+                  <FormControlLabel
+                    value="male"
+                    control={<Radio />}
+                    label="Male"
+                  />
+                </RadioGroup>
+              </FormControl>
             </form>
             <div className="submitWrapper">
               <MuiButton
