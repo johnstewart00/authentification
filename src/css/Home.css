@@ -12,3 +12,9 @@
 .welcome {
     font-family: Georgia;
 }
+@media (max-width: 1000px) {
+    .welcome {
+        font-family: Georgia;
+    font-size: large;
+    }
+}
