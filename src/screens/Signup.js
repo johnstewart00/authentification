@@ -101,7 +101,7 @@ const Signup = () => {
 
               <label className="FormLabel">Password:</label>
               <input
-                type="text"
+                type="password"
                 className="FormInput"
                 onChange={(event) => setPassword(event.target.value)}
               />

@@ -96,7 +96,7 @@ function Login() {
                     <li className="li">
                       <label>Password:</label>
                       <input
-                        type="text"
+                        type="password"
                         onChange={(event) => setPassword(event.target.value)}
                       />
                     </li>
